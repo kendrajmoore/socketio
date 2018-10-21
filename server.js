@@ -9,6 +9,13 @@ const bodyParser = require("body-parser");
 //Socket.io has to use the http server
 const server = require('http').Server(app);
 
+//Socket.io stuff
+const io = require('socket.io')(server);
+io.on("connection", (socket) => {
+  console.log("🔌 New user connected! 🔌");
+})
+
+
 // Port
 const port = process.env.PORT || 3000;
 
@@ -23,6 +30,9 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
 
+// static files middleware
+app.use(express.static("public"));
+
 
 // Mongoose Connection
 const mongoUri =
@@ -33,12 +43,12 @@ mongoose.connect(
 );
 
 //Express View Engine for Handlebars
-const exphbs  = require('express-handlebars');
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+// Set the view engine and file extension
+app.engine("hbs", hbs({ defaultLayout: "main", extname: "hbs" }));
+app.set("view engine", "hbs")
 
 app.get('/', (req, res) => {
-  res.render('index.handlebars');
+  res.render('index.hbs');
 })
 
 server.listen('3000', () => {
