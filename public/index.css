@@ -1,0 +1,175 @@
+/* index.css */
+* {
+  font-family: helvetica;
+}
+
+.usernameForm{
+  display: flex;
+  width : 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#usernameInput{
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 5px;
+  width : 100%:
+}
+
+#createUserBtn{
+  width : 45%;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.channels {
+  display: flex;
+  flex : 6;
+  flex-direction: column;
+  margin-right: 15px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.newChannelForm{
+  display: flex;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+#newChannelInput{
+  font-size: 14px;
+  width : 70%;
+}
+
+#newChannelBtn{
+  font-size: 14px;
+  width: 30%;
+}
+
+.channel{
+  font-size: 18px;
+  padding : 10px 0px;
+  margin : 2px 0px;
+  cursor : pointer;
+}
+
+.channel:hover{
+  color : grey;
+}
+
+.channel-current{
+  font-weight: bold;
+  font-size: 18px;
+  padding : 10px 0px;
+  margin : 2px 0px;
+  background-color: #4f9689;
+}
+
+.brand{
+  margin-left: 8px;
+}
+
+.channelsLabel{
+  margin-left: 8px;
+}
+
+
+.chatContainer {
+  width : 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.chatContainerFluid{
+  margin : 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.channelsAndUsersOnlineContainer{
+  width : 20%;
+  margin-left : -8px;
+  margin-top: -8px;
+  margin-right: 8px;
+  display: flex;
+  flex-direction: column;
+  height : 750px;
+  background-color: #4d394b;
+  color : white;
+}
+
+.usersOnline{
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: auto;
+  flex : 4;
+}
+
+.userOnline{
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.textChatDivide{
+  border : 0.5px solid green;
+  margin-bottom: 10px;
+}
+
+.chatBox {
+  display: flex;
+  justify-content: center;
+  width : 100%;
+}
+
+label {
+  display: block;
+}
+
+#chatInput {
+  width : 100%;
+  display: inline;
+}
+
+#sendChatBtn{
+  width : 10%;
+  display: inline;
+}
+
+.messageContainer {
+  display: flex;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 5px;
+}
+
+.messageUser {
+  display: inline;
+  color : red;
+  font-weight: bold;
+}
+.messageText{
+  display: inline;
+}
+
+.mainContainer{
+  display: none;
+  flex-direction: row;
+  width : 100%;
+}

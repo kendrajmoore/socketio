@@ -1,1 +1,27 @@
 <h1>Socket.io</h1>
+<form class="usernameForm">
+  <input id="usernameInput" placeholder="Username"></input>
+  <button id="createUserBtn">Join Chat</button>
+</form>
+
+<div class="mainContainer">
+  <div class="channelsAndUsersOnlineContainer">
+    <h1 class="brand">Make Chat</h1>
+    <div class="channels">
+        <h2 class="channelsLabel">Channels</h2>
+        <div class="newChannelForm"><input id="newChannelInput" placeholder="New Channel" /><button id="newChannelBtn">Create</button></div>
+        <div class="channel-current">General</div>
+    </div>
+    <h2>Online Users</h2>
+    <div class="usersOnline"></div>
+  </div>
+  <div class="chatContainer">
+    <div class="chatContainerFluid">
+      <div class="messageContainer">
+          <h2>Messages</h2>
+      </div>
+      <div class="textChatDivide"></div>
+      <div class="chatBox"><textarea id="chatInput" placeholder="Type a message"></textarea><button class="btn" id="sendChatBtn">Send</button></div>
+    </div>
+  </div>
+</div>

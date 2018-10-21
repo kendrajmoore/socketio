@@ -10,9 +10,11 @@ const bodyParser = require("body-parser");
 const server = require('http').Server(app);
 
 //Socket.io stuff
+//app.js
 const io = require('socket.io')(server);
 io.on("connection", (socket) => {
-  console.log("🔌 New user connected! 🔌");
+  // This file will be read on new socket connections
+  require('./sockets/chat.js')(io, socket);
 })
 
 
