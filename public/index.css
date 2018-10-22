@@ -1,6 +1,7 @@
 /* index.css */
 * {
   font-family: helvetica;
+  /* background-color: #CB5000; */
 }
 
 .usernameForm{
@@ -176,4 +177,14 @@ label {
 
 img.navbar-img {
     width: 100px;
+    background-color: none;
+}
+
+.longhorn {
+ background-color: #CB5000;
+ color: white;
+}
+
+.nav-item active {
+    background-color: none;
 }
