@@ -173,3 +173,7 @@ label {
   flex-direction: row;
   width : 100%;
 }
+
+img.navbar-img {
+    width: 100px;
+}
