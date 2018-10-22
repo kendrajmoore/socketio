@@ -1,48 +1,42 @@
-<nav class="navbar is-success" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-     <h2>Monie$</h2>
-    </a>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a href="/post">
+      <img class="navbar-img" src="#" alt="logo"></a>
+    <!-- <a class="navbar-brand" href="/post">Reddit</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item" href="https://kendrajmoore.github.io/bankruptcy-app/">
-        Documentation
-      </a>
-      <a class="navbar-item" href="/budget/new">
-        Make a Budget
-      </a>
-      <a class="navbar-item" href="/user/account">
-        User Account
-      </a>
-      <a class="navbar-item" href="/bankruptcy/new">
-        Budget Advice
-      </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+           {{#if currentUser}}
+           <li class="nav-item active">
+             <a class="nav-link" href="/post">Home</a></p>
+           </li>
+           {{#if currentUser}}
+       <li class="nav-item active">
+         <a  class="nav-link" href="/post/new"> Add Post</a>
+       </li>
+       <li class="nav-item active">
+           <!-- <button class="orange" type="submit">Button</button> -->
+           <li><a href="/user/logout">Logout</a></li>
+           <!-- <button class="orange" href="/user/logout" type="submit">Logout</button> -->
+       </li>
+       {{/if}}
+       {{else}}
+       <li class="nav-item active">
+         <a class="nav-link" href="/user/sign-up">Sign Up</a>
+     </li>
+     <li class="nav-item active">
+       <a class="nav-link" href="/user/login">Login</a>
+   </li>
+     <li class="nav-item active">
+       <a class="nav-link" href="/post">Home</a></p>
+  </li>
+
+       {{/if}}
+      </ul>
+
     </div>
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-            {{#if currentUser}}
-                <a class="button is-danger"  href="/user/logout">
-                  Logout
-                </a>
-             {{else}}
-          <a class="button is-link" href="/user/signup">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light"  href="/user/login">
-            Log in
-          </a>
-              {{/if}}
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+
+  </nav>
