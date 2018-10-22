@@ -188,3 +188,13 @@ img.navbar-img {
 .nav-item active {
     background-color: none;
 }
+
+h1 {
+    margin: 50px;
+    text-align: center;
+}
+
+.footer {
+    margin: 300px 0 100px 0;
+    text-align: center;
+}
