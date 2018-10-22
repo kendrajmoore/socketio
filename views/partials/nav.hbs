@@ -1,0 +1,48 @@
+<nav class="navbar is-success" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+     <h2>Monie$</h2>
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="https://kendrajmoore.github.io/bankruptcy-app/">
+        Documentation
+      </a>
+      <a class="navbar-item" href="/budget/new">
+        Make a Budget
+      </a>
+      <a class="navbar-item" href="/user/account">
+        User Account
+      </a>
+      <a class="navbar-item" href="/bankruptcy/new">
+        Budget Advice
+      </a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+            {{#if currentUser}}
+                <a class="button is-danger"  href="/user/logout">
+                  Logout
+                </a>
+             {{else}}
+          <a class="button is-link" href="/user/signup">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light"  href="/user/login">
+            Log in
+          </a>
+              {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
