@@ -54,8 +54,13 @@ app.engine("hbs", hbs({ defaultLayout: "main", extname: "hbs" }));
 app.set("view engine", "hbs")
 
 app.get('/', (req, res) => {
-  res.render('index.hbs');
+  res.render('homepage.hbs');
 })
+
+//404 page
+app.get("*", (req, res) => {
+    res.render("error.hbs");
+});
 
 server.listen('3000', () => {
   console.log('Server listening on Port 3000');
