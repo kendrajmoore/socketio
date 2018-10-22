@@ -72,6 +72,10 @@ app.use(checkAuth);
 const usersController = require("./controllers/users.js");
 app.use("/user", usersController);
 
+//more routes
+const routesController = require("./controllers/routes.js");
+app.use("/longhorn", routesController);
+
 //Express View Engine for Handlebars
 // Set the view engine and file extension
 app.engine("hbs", hbs({ defaultLayout: "main", extname: "hbs" }));

@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require("../models/users.js");
 
 //index page
-app.get("/", (req, res) => {
-    res.render("homepage.hbs", { currentUser: req.user });
+router.get("/", (req, res) => {
+    res.render("index.hbs", { currentUser: req.user });
 });
+
+module.exports = router;

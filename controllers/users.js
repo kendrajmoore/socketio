@@ -28,7 +28,7 @@ router.post("/signup", (req, res) => {
             maxAge: 900000,
             httpOnly: true
         });
-        res.render("index.hbs");
+        res.redirect("/longhorn");
     });
 });
 
@@ -62,7 +62,7 @@ router.post("/login", (req, res) => {
                 );
                 // Set a cookie and redirect to root
                 res.cookie("nToken", token, { maxAge: 900000, httpOnly: true });
-                res.render("index.hbs");
+                res.redirect("/longhorn");
             });
         })
         .catch(err => {
