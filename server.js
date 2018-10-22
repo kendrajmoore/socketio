@@ -82,6 +82,12 @@ app.get("/", (req, res) => {
     res.render("homepage.hbs", { currentUser: req.user });
 });
 
+//index page
+app.get("/", (req, res) => {
+    res.render("homepage.hbs", { currentUser: req.user });
+});
+
+
 //404 page
 app.get("*", (req, res) => {
     res.render("error.hbs");
