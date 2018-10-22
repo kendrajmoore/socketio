@@ -77,9 +77,10 @@ app.use("/user", usersController);
 app.engine("hbs", hbs({ defaultLayout: "main", extname: "hbs" }));
 app.set("view engine", "hbs")
 
-app.get('/', (req, res) => {
-  res.render('homepage.hbs');
-})
+//index page
+app.get("/", (req, res) => {
+    res.render("homepage.hbs", { currentUser: req.user });
+});
 
 //404 page
 app.get("*", (req, res) => {
