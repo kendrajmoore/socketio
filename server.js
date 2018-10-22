@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const jwt = require("jsonwebtoken");
 //Socket.io has to use the http server
 const server = require('http').Server(app);
 
@@ -48,6 +49,28 @@ mongoose.connect(
     { useNewUrlParser: true }
 );
 
+//USER AUTH
+var checkAuth = (req, res, next) => {
+    if (
+        typeof req.cookies.nToken === "undefined" ||
+        req.cookies.nToken === null
+    ) {
+        req.user = null;
+    } else {
+        var token = req.cookies.nToken;
+        var decodedToken = jwt.decode(token, { complete: true }) || {};
+        req.user = decodedToken.payload;
+    }
+
+    next();
+};
+app.use(checkAuth);
+
+
+//user routes
+const usersController = require("./controllers/users.js");
+app.use("/user", usersController);
+
 //Express View Engine for Handlebars
 // Set the view engine and file extension
 app.engine("hbs", hbs({ defaultLayout: "main", extname: "hbs" }));
@@ -65,3 +88,5 @@ app.get("*", (req, res) => {
 server.listen('3000', () => {
   console.log('Server listening on Port 3000');
 })
+
+module.exports = app;
